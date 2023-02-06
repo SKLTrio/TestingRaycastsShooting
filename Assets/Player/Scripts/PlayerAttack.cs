@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +10,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     float rawDamage = 10f;
 
+
     void Update()
     {
         FireWeapon();
@@ -18,24 +18,32 @@ public class PlayerAttack : MonoBehaviour
 
     void FireWeapon()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown("1"))
         {
-            cameraTransform = Camera.main.transform;
-            Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
-            RaycastHit raycastHit;
-
-            if (Physics.Raycast(ray, out raycastHit, range))
+            if (Input.GetButtonDown("Fire1"))
             {
-                if (raycastHit.transform != null)
-                {
-                    raycastHit.collider.SendMessageUpwards("Hit", rawDamage, SendMessageOptions.DontRequireReceiver);
+                cameraTransform = Camera.main.transform;
+                Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
+                RaycastHit raycastHit;
 
+                if (Physics.Raycast(ray, out raycastHit, range))
+                {
+                    if (raycastHit.transform != null)
+                    {
+                        raycastHit.collider.SendMessageUpwards("Hit", rawDamage, SendMessageOptions.DontRequireReceiver);
+
+                    }
+                }
+                else
+                {
+                    Debug.Log("NO RAYCAST");
                 }
             }
-            else
-            {
-                Debug.Log("NO RAYCAST");
-            }
+        }
+
+        else if (Input.GetKeyDown("2"))
+        {
+            GameObject.GetComponent<PlayerAttackBow>().FireBow();
         }
     }
 }
