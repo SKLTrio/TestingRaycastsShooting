@@ -18,26 +18,23 @@ public class PlayerAttack : MonoBehaviour
 
     void FireWeapon()
     {
-        if (Input.GetKeyDown("1"))
+        if (Input.GetButtonDown("Fire1"))
         {
-            if (Input.GetButtonDown("Fire1"))
+            cameraTransform = Camera.main.transform;
+            Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
+            RaycastHit raycastHit;
+
+            if (Physics.Raycast(ray, out raycastHit, range))
             {
-                cameraTransform = Camera.main.transform;
-                Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
-                RaycastHit raycastHit;
-
-                if (Physics.Raycast(ray, out raycastHit, range))
+                if (raycastHit.transform != null)
                 {
-                    if (raycastHit.transform != null)
-                    {
-                        raycastHit.collider.SendMessageUpwards("Hit", rawDamage, SendMessageOptions.DontRequireReceiver);
+                    raycastHit.collider.SendMessageUpwards("Hit", rawDamage, SendMessageOptions.DontRequireReceiver);
 
-                    }
                 }
-                else
-                {
-                    Debug.Log("NO RAYCAST");
-                }
+            }
+            else
+            {
+                Debug.Log("NO RAYCAST");
             }
         }
     }
