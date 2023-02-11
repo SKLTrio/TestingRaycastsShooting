@@ -40,10 +40,5 @@ public class PlayerAttack : MonoBehaviour
                 }
             }
         }
-
-        else if (Input.GetKeyDown("2"))
-        {
-            GameObject.GetComponent<PlayerAttackBow>().FireBow();
-        }
     }
 }
