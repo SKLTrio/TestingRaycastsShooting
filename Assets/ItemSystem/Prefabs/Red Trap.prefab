@@ -66,9 +66,8 @@ MonoBehaviour:
     with the player. This trap takes 5 damage each second that the player is in the
     collider for the trap.
   trapDamage: 5
-  isConsumable: 0
-  isPickupOnCollision: 1
-  damageTimeCounter: 1
+  timeBetweenHits: 0.5
+  timeSinceLastHit: 0
 --- !u!1 &7492947244304629270
 GameObject:
   m_ObjectHideFlags: 0

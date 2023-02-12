@@ -16,16 +16,9 @@ public class RedTrap : MonoBehaviour
     [SerializeField]
     float trapDamage = 5f;
 
-    [SerializeField]
-    public bool isConsumable = false; //If true, item will be destroyed (or quantity reduced) when used
+    public float timeBetweenHits = 0.5f;
 
-    [SerializeField]
-    bool isPickupOnCollision = false; //If this is true, instead of pressing 'F' to interact, you can walk through the item to pick up.
-
-    public float damageTimeCounter = 1f; //Timer for how long each time the red lava trap takes damage off the player's health.
-
-    private float time = 0f;
-
+    public float timeSinceLastHit;
 
 
     // Start is called before the first frame update
@@ -40,41 +33,35 @@ public class RedTrap : MonoBehaviour
     
     }
 
-    private void OnTriggerEnter(Collider collider)
+    private void OnTriggerStay(Collider collider)
     {
-        if (isPickupOnCollision)
+        timeSinceLastHit += Time.deltaTime;
+
+        if (timeSinceLastHit >= timeBetweenHits)
         {
-            if (collider.tag == "Player")
-            {
-                Interact();
-            }
+            timeSinceLastHit = 0f;
+            TakeDamage();
         }
+
     }
 
-    public void Interact()
+    public void TakeDamage()
     {
-        InvokeRepeating("Interact", 1f, 1f);  //1s delay, repeat every 1s
         GameObject thePlayer = GameObject.Find("PlayerObject");
         HealthManager healthManagerScript = thePlayer.GetComponent<HealthManager>();
         healthManagerScript.hitPoints -= trapDamage;
 
-        Debug.Log("You have entered the " + transform.name);
+        Debug.Log("Took " + trapDamage + " damage");
 
-        if (isConsumable)
+        Debug.Log("OUCH: " + healthManagerScript.hitPoints.ToString());
+
+        if (healthManagerScript.hitPoints <= 0)
         {
-            time = 0.0f;
-
-            Debug.Log("OUCH: " + healthManagerScript.hitPoints.ToString());
-            Destroy(gameObject);
-
-            if (healthManagerScript.hitPoints <= 0)
-            {
-                Debug.Log("GAME OVER: " + healthManagerScript.hitPoints.ToString());
-            }
-
+            Debug.Log("GAME OVER: " + healthManagerScript.hitPoints.ToString());
         }
-        
+
     }
+
 
 }
 
