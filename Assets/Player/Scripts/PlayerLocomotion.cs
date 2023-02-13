@@ -29,7 +29,6 @@ public class PlayerLocomotion : MonoBehaviour
     {
         Locomotion();
         RotateAndLook();
-
         PerspectiveCheck();
     }
 
@@ -79,8 +78,8 @@ public class PlayerLocomotion : MonoBehaviour
 
     void RotateAndLook()
     {
-        rotateX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        rotateY -= Input.GetAxis("Mouse Y") * mouseSensitivity;
+        rotateX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        rotateY -= Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         rotateY = Mathf.Clamp(rotateY, lookUpClamp, lookDownClamp);
 
