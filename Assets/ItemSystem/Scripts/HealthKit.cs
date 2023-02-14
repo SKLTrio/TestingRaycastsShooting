@@ -13,7 +13,7 @@ public class HealthKit : MonoBehaviour
     public string description;
 
     [SerializeField]
-    float GiveHealth = 25f;
+    public float GiveHealth = 25f;
 
     [SerializeField]
     public bool isConsumable = false; //If true, item will be destroyed (or quantity reduced) when used
