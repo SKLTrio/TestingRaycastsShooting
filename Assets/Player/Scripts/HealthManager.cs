@@ -19,7 +19,7 @@ public class HealthManager : MonoBehaviour
 
     private void Update()
     {
-
+        
     }
 
     public void Hit(float rawDamage)
@@ -47,7 +47,8 @@ public class HealthManager : MonoBehaviour
 
     public float NormalisedHitPoints()
     {
-        return hitPoints / maxHitPoints; 
+        return hitPoints / maxHitPoints;
+
     }
 
     public void HealthKitAdd(float GiveHealth)
@@ -56,7 +57,7 @@ public class HealthManager : MonoBehaviour
         hitPoints = Mathf.Min(hitPoints, maxHitPoints); // This line of code makes sure that the player's health cannot go above the 100 the 'maxHitPoints' variable, which is set to 100.
         Debug.Log("Added " + GiveHealth + " to the player's health");
         Debug.Log("Player's health is now: " + hitPoints);
-        healthSlider.value = hitPoints;
+        SetHealthSlider();  //Calling SetHealthSlider to update the slider's value.
     }
 
 }

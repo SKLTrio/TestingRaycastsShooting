@@ -52,7 +52,6 @@ public class HealthKit : MonoBehaviour
         Debug.Log("You have aquired a " + transform.name);
 
         healthManagerScript.HealthKitAdd(GiveHealth);
-        //healthManagerScript.healthSlider.value = healthManagerScript.hitPoints + GiveHealth;
 
         if (isConsumable)
         {
