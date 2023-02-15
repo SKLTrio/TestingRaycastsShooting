@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Collider))]
 
@@ -14,7 +15,7 @@ public class RedTrap : MonoBehaviour
     public string description;
 
     [SerializeField]
-    float trapDamage = 5f;
+    float rawDamage = 5f;
 
     public float timeBetweenHits = 0.5f;
 
@@ -49,16 +50,10 @@ public class RedTrap : MonoBehaviour
     {
         GameObject thePlayer = GameObject.Find("PlayerObject");
         HealthManager healthManagerScript = thePlayer.GetComponent<HealthManager>();
-        healthManagerScript.hitPoints -= trapDamage;
 
-        Debug.Log("Took " + trapDamage + " damage");
+        healthManagerScript.Hit(rawDamage);
 
-        Debug.Log("OUCH: " + healthManagerScript.hitPoints.ToString());
-
-        if (healthManagerScript.hitPoints <= 0)
-        {
-            Debug.Log("GAME OVER: " + healthManagerScript.hitPoints.ToString());
-        }
+        Debug.Log("Took " + rawDamage + " damage");
 
     }
 

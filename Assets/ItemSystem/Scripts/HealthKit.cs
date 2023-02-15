@@ -50,8 +50,9 @@ public class HealthKit : MonoBehaviour
         HealthManager healthManagerScript = thePlayer.GetComponent<HealthManager>();
 
         Debug.Log("You have aquired a " + transform.name);
-        healthManagerScript.hitPoints += GiveHealth;
-        Debug.Log("Player Health = " + healthManagerScript.hitPoints.ToString());
+
+        healthManagerScript.HealthKitAdd(GiveHealth);
+        //healthManagerScript.healthSlider.value = healthManagerScript.hitPoints + GiveHealth;
 
         if (isConsumable)
         {

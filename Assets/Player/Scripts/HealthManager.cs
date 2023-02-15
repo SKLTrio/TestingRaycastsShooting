@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +17,12 @@ public class HealthManager : MonoBehaviour
         hitPoints = maxHitPoints;
     }
 
-    void Hit(float rawDamage)
+    private void Update()
+    {
+
+    }
+
+    public void Hit(float rawDamage)
     {
         hitPoints -= rawDamage;
         SetHealthSlider();
@@ -29,6 +35,8 @@ public class HealthManager : MonoBehaviour
         }
     }
 
+    public event Action<float, float> OnHealthChanged;
+
     void SetHealthSlider()
     {
         if (healthSlider != null)
@@ -39,20 +47,16 @@ public class HealthManager : MonoBehaviour
 
     public float NormalisedHitPoints()
     {
-        GameObject healthKitObj = GameObject.Find("HealthKit");
+        return hitPoints / maxHitPoints; 
+    }
 
-        HealthKit healthKitScript = healthKitObj.GetComponent<HealthKit>();
-
-
-
-        //healthKitScript.GiveHealth = 
-
-        //if ()
-        //{
-
-        //}
-
-        return hitPoints / maxHitPoints;
+    public void HealthKitAdd(float GiveHealth)
+    {
+        hitPoints += GiveHealth;
+        hitPoints = Mathf.Min(hitPoints, maxHitPoints); // This line of code makes sure that the player's health cannot go above the 100 the 'maxHitPoints' variable, which is set to 100.
+        Debug.Log("Added " + GiveHealth + " to the player's health");
+        Debug.Log("Player's health is now: " + hitPoints);
+        healthSlider.value = hitPoints;
     }
 
 }

@@ -13,7 +13,7 @@ public class Trap : MonoBehaviour
     public string description;
 
     [SerializeField]
-    float trapDamage = 50f;
+    float rawDamage = 50f;
 
     [SerializeField]
     public bool isConsumable = false; //If true, item will be destroyed (or quantity reduced) when used
@@ -52,20 +52,12 @@ public class Trap : MonoBehaviour
 
         GameObject thePlayer = GameObject.Find("PlayerObject");
         HealthManager healthManagerScript = thePlayer.GetComponent<HealthManager>();
-        healthManagerScript.hitPoints -= trapDamage;
-
         Debug.Log("You have entered the " + transform.name);
+        healthManagerScript.Hit(rawDamage);
 
         if (isConsumable)
         {
-
-            Debug.Log("OUCH: " + healthManagerScript.hitPoints.ToString());
             Destroy(gameObject);
-
-            if (healthManagerScript.hitPoints <= 0)
-            {
-                Debug.Log("GAME OVER: " + healthManagerScript.hitPoints.ToString());
-            }
         }
 
     }
