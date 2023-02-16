@@ -30,9 +30,6 @@ public class Item : MonoBehaviour
     [SerializeField]
     bool isPickupOnCollision = false; // If this is true, instead of pressing 'F' to interact, you can walk through the item to pick up.
 
-    [HideInInspector]
-    public int CoinCounter; // This variable lets the CoinWalletCounter script know which coin the player has picked up.
-
     //Start is called before the first frame update
     void Start()
     {
@@ -88,54 +85,61 @@ public class Item : MonoBehaviour
 
     void Use()
     {
-        GameObject thePlayer = GameObject.Find("PlayerObject");
+        if (transform != null)
+        {
+
+            GameObject thePlayer = GameObject.Find("PlayerObject");
         CoinWallet walletScript = thePlayer.GetComponent<CoinWallet>();
+        GameObject theCoinCounter = GameObject.Find("CoinCounter");
+        CoinWalletCounter coinCounterScript = theCoinCounter.GetComponent<CoinWalletCounter>();
 
         Debug.Log("Using " + transform.name);
 
-        if (isConsumable)
-        {
-            
-            quantity--;
-            if (quantity <= 0)
+            if (transform != null)
             {
-                Destroy(gameObject);
 
-                if (transform.name == "BronzeCoin")
+                quantity--;
+                if (quantity <= 0)
                 {
-                    CoinCounter = 3;
-                    currencyValue += 25f;
-                    Debug.Log("Added " + currencyValue + " to Your wallet");
-                    walletScript.Wallet += currencyValue;
-                    Debug.Log("Your Balance is: " + walletScript.Wallet + " Units!");
-                }
+                    Destroy(gameObject);
 
-                else if (transform.name == "SilverCoin")
-                {
-                    CoinCounter = 2;
-                    currencyValue += 50f;
-                    Debug.Log("Added " + currencyValue + " to Your wallet");
-                    walletScript.Wallet += currencyValue;
-                    Debug.Log("Your Balance is: " + walletScript.Wallet + " Units!");
-                }
+                    if (transform.name == "BronzeCoin")
+                    {
+                        currencyValue += 25f;
+                        Debug.Log("Added " + currencyValue + " to Your wallet");
+                        walletScript.Wallet += currencyValue;
+                        Debug.Log("Your Balance is: " + walletScript.Wallet + " Units!");
+                        coinCounterScript.CurrencyCount();
 
-                else if (transform.name == "GoldCoin")
-                {
-                    CoinCounter = 1;
-                    currencyValue += 100f;
-                    Debug.Log("Added " + currencyValue + " to Your wallet");
-                    walletScript.Wallet += currencyValue;
-                    Debug.Log("Your Balance is: " + walletScript.Wallet + " Units!");
-                }
+                    }
 
-                else
-                {
-                    currencyValue = 0f;
-                    Debug.Log("Added " + currencyValue + " to Your wallet");
-                    walletScript.Wallet += currencyValue;
-                    Debug.Log("Your Balance is: " + walletScript.Wallet + " Units!");
-                }
+                    else if (transform.name == "SilverCoin")
+                    {
+                        currencyValue += 50f;
+                        Debug.Log("Added " + currencyValue + " to Your wallet");
+                        walletScript.Wallet += currencyValue;
+                        Debug.Log("Your Balance is: " + walletScript.Wallet + " Units!");
+                        coinCounterScript.CurrencyCount();
+                    }
 
+                    else if (transform.name == "GoldCoin")
+                    {
+                        currencyValue += 100f;
+                        Debug.Log("Added " + currencyValue + " to Your wallet");
+                        walletScript.Wallet += currencyValue;
+                        Debug.Log("Your Balance is: " + walletScript.Wallet + " Units!");
+                        coinCounterScript.CurrencyCount();
+                    }
+
+                    else
+                    {
+                        currencyValue = 0f;
+                        Debug.Log("Added " + currencyValue + " to Your wallet");
+                        walletScript.Wallet += currencyValue;
+                        Debug.Log("Your Balance is: " + walletScript.Wallet + " Units!");
+                    }
+
+                }
             }
         }
     }

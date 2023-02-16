@@ -268,6 +268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 56127041}
   - component: {fileID: 56127042}
+  - component: {fileID: 56127044}
   m_Layer: 5
   m_Name: CoinCounter
   m_TagString: Untagged
@@ -314,6 +315,17 @@ MonoBehaviour:
   GoldAmount: 0
   SilverAmount: 0
   BronzeAmount: 0
+  GoldText: {fileID: 2043648372}
+  SilverText: {fileID: 27444442}
+  BronzeText: {fileID: 843147469}
+--- !u!222 &56127044
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56127040}
+  m_CullTransparentMesh: 1
 --- !u!1001 &56463133
 PrefabInstance:
   m_ObjectHideFlags: 0

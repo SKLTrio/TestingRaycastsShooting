@@ -14,10 +14,21 @@ public class CoinWalletCounter : MonoBehaviour
     [SerializeField]
     public float BronzeAmount;
 
+    [SerializeField]
+    private TextMeshProUGUI GoldText;
+
+    [SerializeField]
+    private TextMeshProUGUI SilverText;
+
+    [SerializeField]
+    private TextMeshProUGUI BronzeText;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        CurrencyCount();
+
     }
 
     // Update is called once per frame
@@ -28,31 +39,50 @@ public class CoinWalletCounter : MonoBehaviour
 
     public void CurrencyCount()
     {
+        Debug.Log("THIS HAS RUUUUUUN");
+
         GameObject thePlayer = GameObject.Find("PlayerObject");
+        Debug.Log(thePlayer);
+
         Item itemScript = thePlayer.GetComponent<Item>();
 
-        if (itemScript.CoinCounter == 1)
+        if (itemScript.transform.name == "GoldCoin")
         {
             Debug.Log("Picked up 1 gold coin");
             GoldAmount += itemScript.currencyValue;
-            TextMeshProUGUI GoldText = GetComponent<TextMeshProUGUI>();
-            GoldText.text = GoldAmount.ToString();
+            GoldText = GetComponentInChildren<TextMeshProUGUI>(true);
+
+            if (GoldText != null)
+            {
+                GoldText.text = GoldAmount.ToString();
+            }
         }
 
-        else if (itemScript.CoinCounter == 2)
+        else if (itemScript.transform.name == "SilverCoin")
         {
             Debug.Log("Picked up 1 silver coin");
             SilverAmount += itemScript.currencyValue;
-            TextMeshProUGUI SilverText = GetComponent<TextMeshProUGUI>();
-            SilverText.text = SilverAmount.ToString();
+            SilverText = GetComponentInChildren<TextMeshProUGUI>(true);
+
+            if (SilverText != null)
+            {
+                SilverText.text = SilverAmount.ToString();
+            }
+
+            
         }
 
-        else if (itemScript.CoinCounter == 3)
+        else if (itemScript.transform.name == "BronzeCoin")
         {
+            Debug.Log(itemScript.transform.name == "BronzeCoin");
             Debug.Log("Picked up 1 bronze coin");
             BronzeAmount += itemScript.currencyValue;
-            TextMeshProUGUI BronzeText = GetComponent<TextMeshProUGUI>();
-            BronzeText.text = BronzeAmount.ToString();
+            BronzeText = GetComponentInChildren<TextMeshProUGUI>(true);
+
+            if (BronzeText != null)
+            {
+                BronzeText.text = BronzeAmount.ToString();
+            }
         }
     }
 }
