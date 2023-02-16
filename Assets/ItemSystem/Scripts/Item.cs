@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
@@ -28,6 +29,9 @@ public class Item : MonoBehaviour
 
     [SerializeField]
     bool isPickupOnCollision = false; // If this is true, instead of pressing 'F' to interact, you can walk through the item to pick up.
+
+    [HideInInspector]
+    public int CoinCounter; // This variable lets the CoinWalletCounter script know which coin the player has picked up.
 
     //Start is called before the first frame update
     void Start()
@@ -91,6 +95,7 @@ public class Item : MonoBehaviour
 
         if (isConsumable)
         {
+            
             quantity--;
             if (quantity <= 0)
             {
@@ -98,6 +103,7 @@ public class Item : MonoBehaviour
 
                 if (transform.name == "BronzeCoin")
                 {
+                    CoinCounter = 3;
                     currencyValue += 25f;
                     Debug.Log("Added " + currencyValue + " to Your wallet");
                     walletScript.Wallet += currencyValue;
@@ -106,6 +112,7 @@ public class Item : MonoBehaviour
 
                 else if (transform.name == "SilverCoin")
                 {
+                    CoinCounter = 2;
                     currencyValue += 50f;
                     Debug.Log("Added " + currencyValue + " to Your wallet");
                     walletScript.Wallet += currencyValue;
@@ -114,6 +121,7 @@ public class Item : MonoBehaviour
 
                 else if (transform.name == "GoldCoin")
                 {
+                    CoinCounter = 1;
                     currencyValue += 100f;
                     Debug.Log("Added " + currencyValue + " to Your wallet");
                     walletScript.Wallet += currencyValue;
