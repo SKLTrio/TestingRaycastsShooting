@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: -1}
-  m_SizeDelta: {x: 11.3043, y: 23.687}
+  m_AnchoredPosition: {x: 75, y: -1}
+  m_SizeDelta: {x: 40, y: 23.687}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &27444442
 MonoBehaviour:
@@ -267,8 +267,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 56127041}
-  - component: {fileID: 56127042}
   - component: {fileID: 56127044}
+  - component: {fileID: 56127045}
   m_Layer: 5
   m_Name: CoinCounter
   m_TagString: Untagged
@@ -300,7 +300,15 @@ RectTransform:
   m_AnchoredPosition: {x: -100, y: 60}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &56127042
+--- !u!222 &56127044
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56127040}
+  m_CullTransparentMesh: 1
+--- !u!114 &56127045
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -318,14 +326,6 @@ MonoBehaviour:
   GoldText: {fileID: 2043648372}
   SilverText: {fileID: 27444442}
   BronzeText: {fileID: 843147469}
---- !u!222 &56127044
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 56127040}
-  m_CullTransparentMesh: 1
 --- !u!1001 &56463133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1581,8 +1581,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: -29}
-  m_SizeDelta: {x: 11.3043, y: 23.687}
+  m_AnchoredPosition: {x: 75, y: -29}
+  m_SizeDelta: {x: 40, y: 23.687}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &843147469
 MonoBehaviour:
@@ -4273,8 +4273,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: 28}
-  m_SizeDelta: {x: 11.3043, y: 23.687}
+  m_AnchoredPosition: {x: 75, y: 28}
+  m_SizeDelta: {x: 40, y: 23.687}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2043648372
 MonoBehaviour:
@@ -4825,6 +4825,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SilverCoin
       objectReference: {fileID: 0}
+    - target: {fileID: 950069637994705273, guid: bc6d260fa4d5cf842bc5a7f7a75256f9, type: 3}
+      propertyPath: m_TagString
+      value: Coin
+      objectReference: {fileID: 0}
     - target: {fileID: 1847063799384472537, guid: bc6d260fa4d5cf842bc5a7f7a75256f9, type: 3}
       propertyPath: isStorable
       value: 0
@@ -4954,6 +4958,10 @@ PrefabInstance:
     - target: {fileID: 2725085549458655992, guid: e9cf5b07a5c14da4bafa4c5d9ab64b53, type: 3}
       propertyPath: m_Name
       value: GoldCoin
+      objectReference: {fileID: 0}
+    - target: {fileID: 2725085549458655992, guid: e9cf5b07a5c14da4bafa4c5d9ab64b53, type: 3}
+      propertyPath: m_TagString
+      value: Coin
       objectReference: {fileID: 0}
     - target: {fileID: 3061873922009190644, guid: e9cf5b07a5c14da4bafa4c5d9ab64b53, type: 3}
       propertyPath: description

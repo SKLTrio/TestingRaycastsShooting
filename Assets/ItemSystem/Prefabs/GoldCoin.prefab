@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3061873922009190644}
   m_Layer: 0
   m_Name: GoldCoin
-  m_TagString: Untagged
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,6 +72,8 @@ MonoBehaviour:
   isStorable: 0
   isConsumable: 1
   isPickupOnCollision: 1
+  CoinCount: 0
+  Type: 1
 --- !u!1 &7943577779163601072
 GameObject:
   m_ObjectHideFlags: 0
