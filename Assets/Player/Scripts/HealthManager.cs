@@ -9,6 +9,7 @@ public class HealthManager : MonoBehaviour
 {
     public float hitPoints;
     public float maxHitPoints = 100f;
+    public float minHitPoints = 0f;
 
     public Slider healthSlider;
 
@@ -34,8 +35,6 @@ public class HealthManager : MonoBehaviour
             Debug.Log("TODO: GAME OVER - YOU DIED");
         }
     }
-
-    public event Action<float, float> OnHealthChanged;
 
     void SetHealthSlider()
     {

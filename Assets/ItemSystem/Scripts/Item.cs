@@ -95,8 +95,6 @@ public class Item : MonoBehaviour
 
             GameObject thePlayer = GameObject.Find("PlayerObject");
             CoinWallet walletScript = thePlayer.GetComponent<CoinWallet>();
-            GameObject theCoinCounter = GameObject.Find("CoinCounter");
-            CoinWalletCounter coinCounterScript = theCoinCounter.GetComponent<CoinWalletCounter>();
 
             Debug.Log("Using " + transform.name);
 
@@ -115,9 +113,7 @@ public class Item : MonoBehaviour
                         Debug.Log("Added " + currencyValue + " to Your wallet");
                         walletScript.Wallet += currencyValue;
                         Debug.Log("Your Balance is: " + walletScript.Wallet + " Units!");
-                        coinCounterScript.BronzeAmount += CoinCount;
-                        coinCounterScript.CurrencyCount();
-
+                        walletScript.UnitsToTextMesh();
                     }
 
                     else if (transform.name == "SilverCoin")
@@ -127,8 +123,7 @@ public class Item : MonoBehaviour
                         Debug.Log("Added " + currencyValue + " to Your wallet");
                         walletScript.Wallet += currencyValue;
                         Debug.Log("Your Balance is: " + walletScript.Wallet + " Units!");
-                        coinCounterScript.SilverAmount += CoinCount;
-                        coinCounterScript.CurrencyCount();
+                        walletScript.UnitsToTextMesh();
                     }
 
                     else if (transform.name == "GoldCoin")
@@ -138,8 +133,7 @@ public class Item : MonoBehaviour
                         Debug.Log("Added " + currencyValue + " to Your wallet");
                         walletScript.Wallet += currencyValue;
                         Debug.Log("Your Balance is: " + walletScript.Wallet + " Units!");
-                        coinCounterScript.GoldAmount += CoinCount;
-                        coinCounterScript.CurrencyCount();
+                        walletScript.UnitsToTextMesh();
                     }
 
                     else
