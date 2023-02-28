@@ -67,6 +67,7 @@ public class MenuController : MonoBehaviour
         pauseMenuPanel.SetActive(true);
         Time.timeScale = 0f;
         IsGamePaused = true;
+
     }
 
     public void Resume()

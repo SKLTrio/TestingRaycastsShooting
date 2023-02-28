@@ -18,6 +18,9 @@ public class PlayerAttack : MonoBehaviour
 
     void FireWeapon()
     {
+        GameObject theCanvas = GameObject.Find("Canvas");
+        MenuController menuController = theCanvas.GetComponent<MenuController>();
+
         if (Input.GetButtonDown("Fire1"))
         {
             cameraTransform = Camera.main.transform;

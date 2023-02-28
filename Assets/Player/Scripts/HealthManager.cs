@@ -20,7 +20,10 @@ public class HealthManager : MonoBehaviour
 
     private void Update()
     {
-        
+        if (hitPoints < 0)
+        {
+            hitPoints = 0;
+        }
     }
 
     public void Hit(float rawDamage)

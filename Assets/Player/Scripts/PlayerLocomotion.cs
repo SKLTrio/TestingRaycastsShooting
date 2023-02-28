@@ -9,7 +9,7 @@ public class PlayerLocomotion : MonoBehaviour
     Transform playerContainer, cameraContainer;
 
     public float speed = 6.0f;
-    public float jumpSpeed = 10f;
+    public float jumpSpeed = 5f;
     public float mouseSensitivity = 2f;
     public float gravity = 20.0f;
     public float lookUpClamp = -30f;
@@ -21,6 +21,7 @@ public class PlayerLocomotion : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
         characterController = GetComponent<CharacterController>();
         SetCurrentCamera();
     }
