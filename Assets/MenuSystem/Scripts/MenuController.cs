@@ -20,6 +20,10 @@ public class MenuController : MonoBehaviour
     [SerializeField]
     GameObject pauseMenuPanel;
 
+    [Tooltip("Drag in a high scores panel, if one exists")]
+    [SerializeField]
+    GameObject HighScorePanel;
+
     [SerializeField]
     bool IsPauseMenuAvailable = false;
 
@@ -98,5 +102,15 @@ public class MenuController : MonoBehaviour
         Application.Quit();
     }
 
+    public void HighScoreMenuClose()
+    {
+        HighScorePanel.SetActive(false);
+    }
+
+    public void HighScoreMenuOpen()
+    {
+        HighScorePanel.GetComponent<HighScoreSystem>().UpdateHighScoreUI();
+        HighScorePanel.SetActive(true);
+    }
 
 }

@@ -464,6 +464,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8938706532667320551, guid: 8185865fe2405804b989b8e925cdfc6c, type: 3}
+      propertyPath: HighScorePanel
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 8185865fe2405804b989b8e925cdfc6c, type: 3}

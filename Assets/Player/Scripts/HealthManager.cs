@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,11 +32,11 @@ public class HealthManager : MonoBehaviour
         hitPoints -= rawDamage;
         SetHealthSlider();
 
-        Debug.Log("OUCH: " + hitPoints.ToString());
+        UnityEngine.Debug.Log("OUCH: " + hitPoints.ToString());
 
         if (hitPoints <= 0)
         {
-            Debug.Log("TODO: GAME OVER - YOU DIED");
+            OnDeath();
         }
     }
 
@@ -57,9 +58,17 @@ public class HealthManager : MonoBehaviour
     {
         hitPoints += GiveHealth;
         hitPoints = Mathf.Min(hitPoints, maxHitPoints); // This line of code makes sure that the player's health cannot go above the 100 the 'maxHitPoints' variable, which is set to 100.
-        Debug.Log("Added " + GiveHealth + " to the player's health");
-        Debug.Log("Player's health is now: " + hitPoints);
+        UnityEngine.Debug.Log("Added " + GiveHealth + " to the player's health");
+        UnityEngine.Debug.Log("Player's health is now: " + hitPoints);
         SetHealthSlider();  //Calling SetHealthSlider to update the slider's value.
+    }
+
+    void OnDeath()
+    {
+
+        UnityEngine.Debug.Log("GAME OVER - YOU DIED");
+        GameManager.Instance.GameOver();
+
     }
 
 }

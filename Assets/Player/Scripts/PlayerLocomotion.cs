@@ -20,6 +20,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     void Start()
     {
+        GameManager.ResetGame();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
         characterController = GetComponent<CharacterController>();

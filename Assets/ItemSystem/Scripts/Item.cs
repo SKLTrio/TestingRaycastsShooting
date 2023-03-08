@@ -33,6 +33,9 @@ public class Item : MonoBehaviour
     [SerializeField]
     public float CoinCount;
 
+    [SerializeField]
+    int pointValue = 1;
+
     public CoinType Type = CoinType.None;
 
     //Start is called before the first frame update
@@ -114,6 +117,7 @@ public class Item : MonoBehaviour
                         walletScript.Wallet += currencyValue;
                         Debug.Log("Your Balance is: " + walletScript.Wallet + " Units!");
                         walletScript.UnitsToTextMesh();
+                        GameManager.IncrementScore(pointValue);
                     }
 
                     else if (transform.name == "SilverCoin")
@@ -124,6 +128,7 @@ public class Item : MonoBehaviour
                         walletScript.Wallet += currencyValue;
                         Debug.Log("Your Balance is: " + walletScript.Wallet + " Units!");
                         walletScript.UnitsToTextMesh();
+                        GameManager.IncrementScore(pointValue);
                     }
 
                     else if (transform.name == "GoldCoin")
@@ -134,6 +139,7 @@ public class Item : MonoBehaviour
                         walletScript.Wallet += currencyValue;
                         Debug.Log("Your Balance is: " + walletScript.Wallet + " Units!");
                         walletScript.UnitsToTextMesh();
+                        GameManager.IncrementScore(pointValue);
                     }
 
                     else
