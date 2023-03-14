@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 
         score += value;
         Instance.UIManager.UpdateScoreUI(score);
-        Debug.Log("Score: " + score.ToString());
+        Debug.Log("Score: " + score);
 
     }
 
