@@ -1394,6 +1394,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609842604}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &610252282 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4518245764355270767, guid: 7d469b733ff8f124ab31af11456e9f33, type: 3}
+  m_PrefabInstance: {fileID: 4518245764506019913}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &611035928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4789,6 +4794,18 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4181101380463479273, guid: 7d469b733ff8f124ab31af11456e9f33, type: 3}
+      propertyPath: rotationSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181101380463479273, guid: 7d469b733ff8f124ab31af11456e9f33, type: 3}
+      propertyPath: transforms.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181101380463479273, guid: 7d469b733ff8f124ab31af11456e9f33, type: 3}
+      propertyPath: transforms.Array.data[0]
+      value: 
+      objectReference: {fileID: 610252282}
     - target: {fileID: 4518245764355270764, guid: 7d469b733ff8f124ab31af11456e9f33, type: 3}
       propertyPath: m_Name
       value: CCTV Camera
@@ -4836,6 +4853,10 @@ PrefabInstance:
     - target: {fileID: 4518245764355270767, guid: 7d469b733ff8f124ab31af11456e9f33, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518245766014639871, guid: 7d469b733ff8f124ab31af11456e9f33, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.7323
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
