@@ -14,9 +14,9 @@ public class CCTVMovement : MonoBehaviour
 
     public Transform CameraPart1;
     public Transform CameraPart2;
-    public Transform CameraPart3;
     public Transform CameraPart4;
     public Transform CameraPart5;
+    public Transform CameraLight;
 
     void Start()
     {
@@ -27,14 +27,14 @@ public class CCTVMovement : MonoBehaviour
     {
         // calculate the current angle of the object based on time and speed
         float currentAngle = Mathf.Sin(Time.time * speed * Mathf.Deg2Rad) * 30f;
-        float currentAngle2 = Mathf.Sin(Time.time * speed * Mathf.Deg2Rad) * 35f;
+        float currentAngle2 = Mathf.Sin(Time.time * speed * Mathf.Deg2Rad) * 321f;
+        //float currentAngle2 = Mathf.Sin(Time.time * speed * Mathf.Deg2Rad) * 35f;
 
         // set the rotation of the child objects.
         CameraPart1.localRotation = Quaternion.Euler(angle, currentAngle, 0f);
         CameraPart2.localRotation = Quaternion.Euler(angle, currentAngle2, 0f);
-        CameraPart3.localRotation = Quaternion.Euler(lightAngle, currentAngle, 0f);
         CameraPart4.localRotation = Quaternion.Euler(angle, currentAngle, 0f);
         CameraPart5.localRotation = Quaternion.Euler(angle, currentAngle, 0f);
-
+        CameraLight.localRotation = Quaternion.Euler(lightAngle, currentAngle, 0f);
     }
 }
