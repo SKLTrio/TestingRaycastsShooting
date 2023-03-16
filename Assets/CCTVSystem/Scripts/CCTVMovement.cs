@@ -1,41 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CCTVMovement : MonoBehaviour
 {
-    [SerializeField] private Transform[] transforms;
-    [SerializeField] private float rotationSpeed = 10f;
-    [SerializeField] private float minRotation = -30f;
-    [SerializeField] private float maxRotation = 30f;
+    public float speed = 1f; // speed of the object movement
+    public float angle = 75f; // angle at which the object will be moved
+    public float lightAngle = 150f; // angle at which the object will be moved
+    public float fov = 60f; // field of view in degrees
 
-    private float currentRotation = 0f;
-    private float direction = 1f;
+    public Transform target; // target to look at (optional)
 
-    private void Start()
+    public Transform CameraPart1;
+    public Transform CameraPart2;
+    public Transform CameraPart3;
+    public Transform CameraPart4;
+    public Transform CameraPart5;
+
+    void Start()
     {
-        transforms = new Transform[6];
-        for (int i = 0; i < 6; i++)
-        {
-            transforms[i] = transform.GetChild(i);
-        }
+
     }
 
     void Update()
     {
-        foreach (Transform childTransform in transforms)
-        {
-            // Rotate the transform horizontally
-            childTransform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime * direction);
-            currentRotation += rotationSpeed * Time.deltaTime * direction;
-            currentRotation = Mathf.Clamp(currentRotation, minRotation, maxRotation);
-            childTransform.localRotation = Quaternion.Euler(0f, currentRotation, 0f);
+        // calculate the current angle of the object based on time and speed
+        float currentAngle = Mathf.Sin(Time.time * speed * Mathf.Deg2Rad) * 30f;
+        float currentAngle2 = Mathf.Sin(Time.time * speed * Mathf.Deg2Rad) * 35f;
 
-            // Change direction if we reach min/max rotation
-            if (currentRotation >= maxRotation || currentRotation <= minRotation)
-            {
-                direction *= -1f;
-            }
-        }
+        // set the rotation of the child objects.
+        CameraPart1.localRotation = Quaternion.Euler(angle, currentAngle, 0f);
+        CameraPart2.localRotation = Quaternion.Euler(angle, currentAngle2, 0f);
+        CameraPart3.localRotation = Quaternion.Euler(lightAngle, currentAngle, 0f);
+        CameraPart4.localRotation = Quaternion.Euler(angle, currentAngle, 0f);
+        CameraPart5.localRotation = Quaternion.Euler(angle, currentAngle, 0f);
+
     }
 }

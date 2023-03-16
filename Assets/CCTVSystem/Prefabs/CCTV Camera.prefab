@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4518245764355270767}
-  - component: {fileID: 4181101380463479273}
+  - component: {fileID: 1716455691484604244}
   m_Layer: 0
   m_Name: CCTV Camera
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4181101380463479273
+--- !u!114 &1716455691484604244
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -52,16 +52,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f82e8d70c3da8468670bae088fa2cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transforms:
-  - {fileID: 4518245764390887130}
-  - {fileID: 4518245766282652827}
-  - {fileID: 4518245765752251320}
-  - {fileID: 4518245764416412230}
-  - {fileID: 4518245765332010814}
-  - {fileID: 4518245765027099435}
-  rotationSpeed: 10
-  minRotation: -30
-  maxRotation: 30
+  speed: 30
+  angle: 75
+  lightAngle: 150
+  fov: 60
+  target: {fileID: 0}
+  CameraPart1: {fileID: 4518245764390887130}
+  CameraPart2: {fileID: 4518245766282652827}
+  CameraPart3: {fileID: 4518245765332010814}
+  CameraPart4: {fileID: 4518245765027099435}
+  CameraPart5: {fileID: 4518245766014639871}
 --- !u!1 &4518245764390887131
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,10 +156,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
+  m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4518245764416412231
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,12 +270,12 @@ GameObject:
   - component: {fileID: 4518245765027099437}
   - component: {fileID: 4518245765027099434}
   m_Layer: 0
-  m_Name: CCTV_CameraLight_Model_#1
+  m_Name: CCTV_CameraLight_Model_#1 [Green]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4518245765027099435
 Transform:
   m_ObjectHideFlags: 0
@@ -351,10 +351,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
+  m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4518245765332010815
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4518245765332010814
 Transform:
   m_ObjectHideFlags: 0
@@ -379,14 +379,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4518245765332010815}
-  m_LocalRotation: {x: 0.976296, y: 0, z: 0, w: 0.2164397}
+  m_LocalRotation: {x: 0.9659258, y: 0, z: 0, w: 0.2588191}
   m_LocalPosition: {x: -1.6281, y: 1.6904, z: -1.7323}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4518245764355270767}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 155, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 150, y: 0, z: 0}
 --- !u!108 &4518245765332010801
 Light:
   m_ObjectHideFlags: 0
@@ -658,12 +658,12 @@ GameObject:
   - component: {fileID: 4518245766014639857}
   - component: {fileID: 4518245766014639870}
   m_Layer: 0
-  m_Name: CCTV_CameraLight_Model_#2
+  m_Name: CCTV_CameraLight_Model_#2 [Red]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4518245766014639871
 Transform:
   m_ObjectHideFlags: 0
@@ -672,7 +672,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4518245766014639868}
   m_LocalRotation: {x: 0.60876137, y: 0, z: 0, w: 0.7933534}
-  m_LocalPosition: {x: -1.6281, y: 1.6904, z: 1.6904}
+  m_LocalPosition: {x: -1.6281, y: 1.6904, z: -1.7323}
   m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -739,10 +739,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
+  m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4518245766282652824
 GameObject:
   m_ObjectHideFlags: 0
