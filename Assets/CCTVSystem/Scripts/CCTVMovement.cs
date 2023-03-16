@@ -27,7 +27,7 @@ public class CCTVMovement : MonoBehaviour
     {
         // calculate the current angle of the object based on time and speed
         float currentAngle = Mathf.Sin(Time.time * speed * Mathf.Deg2Rad) * 30f;
-        float currentAngle2 = Mathf.Sin(Time.time * speed * Mathf.Deg2Rad) * 321f;
+        float currentAngle2 = Mathf.Sin(Time.time * speed * Mathf.Deg2Rad) * 55f;
         //float currentAngle2 = Mathf.Sin(Time.time * speed * Mathf.Deg2Rad) * 35f;
 
         // set the rotation of the child objects.
