@@ -73,7 +73,7 @@ public class HighScoreSystem : MonoBehaviour
 
                     PlayerPrefs.SetString("HighPlayer" + i, highScoreList[i].Name);
                     PlayerPrefs.SetInt("HighScore" + i, highScoreList[i].Score);
-                    //Debug.Log("Save: [" + i + "] " + PlayerPrefs.GetString("HighPlayer" + i, "???") + " | " + PlayerPrefs.GetInt("HighScore" + i, 999));
+                    Debug.Log("Save: [" + i + "] " + PlayerPrefs.GetString("HighPlayer" + i, "???") + " | " + PlayerPrefs.GetInt("HighScore" + i, 999));
                 }
             } 
         }

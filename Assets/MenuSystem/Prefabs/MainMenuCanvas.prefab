@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8464747849901647070}
   - component: {fileID: 4628474746499218164}
   - component: {fileID: 8007981208706796565}
-  - component: {fileID: 1071223020}
+  - component: {fileID: 807956602}
   m_Layer: 5
   m_Name: HighScorePanel
   m_TagString: Untagged
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1071223020
+--- !u!114 &807956602
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1935,7 +1935,7 @@ MonoBehaviour:
   mainMenuScene: StartScene
   optionsMenuPanel: {fileID: 0}
   pauseMenuPanel: {fileID: 0}
-  highScorePanel: {fileID: 54126051459027826}
+  HighScorePanel: {fileID: 54126051459027826}
   IsPauseMenuAvailable: 0
 --- !u!1001 &2878857919460978484
 PrefabInstance:
@@ -2184,7 +2184,7 @@ PrefabInstance:
     - target: {fileID: 6629131788982468725, guid: 29702c1a5ccebe449864ca79d257e15e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4997816612284119692, guid: d5239980d788a2b48a751130315d5d6c, type: 3}
+      objectReference: {fileID: 8938706532667320551}
     - target: {fileID: 6629131788982468725, guid: 29702c1a5ccebe449864ca79d257e15e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2

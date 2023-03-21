@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &743884088 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8938706532667320551, guid: 8185865fe2405804b989b8e925cdfc6c, type: 3}
+  m_PrefabInstance: {fileID: 8938706530920685956}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3742dbc90de203a4db16734a27ca4fe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1136439431
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,11 +312,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1525805172 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 54126051459027826, guid: 8185865fe2405804b989b8e925cdfc6c, type: 3}
-  m_PrefabInstance: {fileID: 8938706530920685956}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1537566978
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,10 +387,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 54126051459027826, guid: 8185865fe2405804b989b8e925cdfc6c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 8362315403529391969, guid: 8185865fe2405804b989b8e925cdfc6c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 743884088}
     - target: {fileID: 8362315403529391969, guid: 8185865fe2405804b989b8e925cdfc6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: HighScoreMenuClose
@@ -477,10 +483,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8938706532667320551, guid: 8185865fe2405804b989b8e925cdfc6c, type: 3}
-      propertyPath: HighScorePanel
-      value: 
-      objectReference: {fileID: 1525805172}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 8185865fe2405804b989b8e925cdfc6c, type: 3}
