@@ -220,7 +220,7 @@ Transform:
   - {fileID: 2401653264444857538}
   - {fileID: 2401653264222438913}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &2401653263606080748
 CharacterController:
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   jumpSpeed: 10
-  mouseSensitivity: 2
+  mouseSensitivity: 1000
   gravity: 20
   lookUpClamp: -30
   lookDownClamp: 60
@@ -284,6 +284,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 100
+  maxHitPoints: 100
+  minHitPoints: 0
+  healthSlider: {fileID: 0}
 --- !u!114 &2401653263606080751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Wallet: 0
+  unitValueText: {fileID: 0}
 --- !u!1 &2401653263927402829
 GameObject:
   m_ObjectHideFlags: 0
