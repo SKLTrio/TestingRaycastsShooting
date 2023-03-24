@@ -5,6 +5,7 @@ using UnityEngine;
 public class BoatBehaviour : MonoBehaviour
 {
     public GameObject sail;
+    public GameObject BoatLockBox;
     public BoatInteraction PlayerObject;
 
     public float MaxSpeed = 10f;
@@ -23,6 +24,9 @@ public class BoatBehaviour : MonoBehaviour
     {
         if (PlayerObject.InBoat)
         {
+            //Activating the BoatLockBox Shapes.
+            BoatLockBox.SetActive(true);
+
             //Calculating the direction of the wind
             Vector3 WindDirection = Quaternion.Euler(0f, WindAngle, 0f) * Vector3.forward;
 
@@ -44,6 +48,7 @@ public class BoatBehaviour : MonoBehaviour
             // Rotate the boat towards the wind
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(WindDirection), TurnSpeed * Time.deltaTime);
         }
+
     }
 
     void RandomWindDirection()

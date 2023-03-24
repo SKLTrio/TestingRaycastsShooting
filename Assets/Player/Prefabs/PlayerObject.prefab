@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 2401653263606080751}
   - component: {fileID: 3798039881527973036}
   - component: {fileID: 8387818982384856331}
+  - component: {fileID: 1085013565}
   m_Layer: 6
   m_Name: PlayerObject
   m_TagString: Player
@@ -220,7 +221,7 @@ Transform:
   - {fileID: 2401653264444857538}
   - {fileID: 2401653264222438913}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &2401653263606080748
 CharacterController:
@@ -328,6 +329,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wallet: 0
   unitValueText: {fileID: 0}
+--- !u!114 &1085013565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2401653263606080746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147f2db4ec34e0041be062f4beb521ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Boat: {fileID: 0}
+  BoatSeat: {fileID: 0}
+  InteractionRange: 5
+  InBoat: 0
 --- !u!1 &2401653263927402829
 GameObject:
   m_ObjectHideFlags: 0

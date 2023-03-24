@@ -5,13 +5,12 @@ using UnityEngine;
 public class BoatInteraction : MonoBehaviour
 {
     public BoatBehaviour Boat;
-    public GameObject BoatSeat;
+    public Transform BoatSeat;
 
     public float InteractionRange = 1f;
 
     private bool IsInRange = false;
     public bool InBoat = false;
-    private Vector3 playerOffset;
 
     void Update()
     {
@@ -21,14 +20,16 @@ public class BoatInteraction : MonoBehaviour
             {
                 // Remove player from boat
                 InBoat = false;
-                transform.SetParent(null);
+                //Activating the BoatLockBox Shapes.
+                Boat.BoatLockBox.SetActive(false);
+
             }
             else if (IsInRange)
             {
                 // Add player to boat
                 InBoat = true;
-                transform.SetParent(BoatSeat.transform);
-                transform.localPosition = Vector3.zero;
+                //Activating the BoatLockBox Shapes.
+                Boat.BoatLockBox.SetActive(true);
             }
         }
     }
