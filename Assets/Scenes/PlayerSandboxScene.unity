@@ -2462,6 +2462,7 @@ GameObject:
   - component: {fileID: 1425385200}
   - component: {fileID: 1425385199}
   - component: {fileID: 1425385202}
+  - component: {fileID: 1425385203}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2526,6 +2527,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highPlayersTMP: []
   highScoresTMP: []
+--- !u!114 &1425385203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425385198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dff1745ab6529e40bcd7f8eed58abec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 0}
+  sounds:
+  - name: CoinCollect
+    clip: {fileID: 8300000, guid: c9942b0595a78f64c9e1e92524ba41bd, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: GruntFemale
+    clip: {fileID: 8300000, guid: 4ed9d2ec0fb79614087a7a486ab6ab34, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: GruntMale
+    clip: {fileID: 8300000, guid: f9a99be4cbc008645866604ae944995b, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: GunShot1
+    clip: {fileID: 8300000, guid: 812eead247fa1794798ad5ae41caa8a9, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
 --- !u!1 &1451926296
 GameObject:
   m_ObjectHideFlags: 0
@@ -3914,6 +3965,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2401653263606080747, guid: 2d724851072302c4599eae32f44522e7, type: 3}
+      propertyPath: mouseSensitivity
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 2401653263606080749, guid: 2d724851072302c4599eae32f44522e7, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -4514,7 +4569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6208480814124812262, guid: d5239980d788a2b48a751130315d5d6c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8766627560915461576, guid: d5239980d788a2b48a751130315d5d6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName

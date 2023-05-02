@@ -20,7 +20,6 @@ public class CCTVMovement : MonoBehaviour
 
     bool ShouldRotateCamera = true;
 
-    bool isBeeping = false;
     bool isRedLightBlinking = false;
     float timer = 0f;
 

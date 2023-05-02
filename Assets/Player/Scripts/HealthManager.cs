@@ -33,6 +33,7 @@ public class HealthManager : MonoBehaviour
         SetHealthSlider();
 
         UnityEngine.Debug.Log("OUCH: " + hitPoints.ToString());
+        AudioManager.instance.PlayAtSource("GruntFemale", gameObject);
 
         if (hitPoints <= 0)
         {
