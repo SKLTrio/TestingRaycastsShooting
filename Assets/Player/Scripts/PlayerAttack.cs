@@ -23,6 +23,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            AudioManager.instance.PlayAtSource("GunShot1", gameObject);
             cameraTransform = Camera.main.transform;
             Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
             RaycastHit raycastHit;

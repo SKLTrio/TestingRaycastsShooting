@@ -63,6 +63,7 @@ public class EnemyAttack : MonoBehaviour
                 tick = 0f;
                 Ray ray = new Ray(gunTransform.position, gunTransform.forward);
                 RaycastHit raycastHit;
+                AudioManager.instance.PlayAtSource("GunShot1", gameObject);
 
                 if (Physics.Raycast(ray, out raycastHit, maxDistanceToTarget))
                 {

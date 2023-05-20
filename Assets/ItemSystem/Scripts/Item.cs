@@ -66,7 +66,7 @@ public class Item : MonoBehaviour
 
     public void Interact()
     {
-
+        AudioManager.instance.PlayAtSource("CoinCollect", gameObject);
         Debug.Log("Picked up " + transform.name);
 
         if (isStorable)
